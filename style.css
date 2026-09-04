@@ -1,0 +1,972 @@
+/*PODSTAWOWE USTAWIENIA*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #fffaf1;
+    color: #25241f;
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1160px, 92%);
+    margin: auto;
+}
+
+
+/* NAGŁÓWEK I NAWIGACJA*/
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background: rgba(255, 250, 241, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #ece5d5;
+}
+
+.nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 82px;
+}
+
+.brand img {
+    width: 230px;
+    height: auto;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    color: #2c2b25;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #42652c;
+}
+
+.nav-cta,
+.btn {
+    background: #42652c !important;
+    color: white !important;
+
+    border-radius: 10px;
+    padding: 12px 20px;
+
+    box-shadow: 0 8px 20px rgba(66, 101, 44, 0.15);
+}
+
+.menu-btn {
+    display: none;
+
+    border: 0;
+    background: none;
+
+    font-size: 28px;
+}
+
+
+/*  PRZYCISKI*/
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.btn-outline {
+    background: transparent !important;
+    color: #42652c !important;
+
+    border: 1px solid #42652c;
+
+    box-shadow: none;
+}
+
+
+/* 4. SEKCJA HERO*/
+
+.hero {
+    position: relative;
+
+    min-height: 650px;
+    overflow: hidden;
+
+    background: #e8dfc9;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("assets/hero.jpg");
+    background-size: cover;
+    background-position: center right;
+
+    transform: scale(1.02);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(255, 250, 241, 0.98) 0%,
+        rgba(255, 250, 241, 0.88) 43%,
+        rgba(255, 250, 241, 0.12) 78%,
+        rgba(255, 250, 241, 0.02) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 105px 0 140px;
+
+    max-width: 1160px;
+}
+
+.hero-content h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 5.4vw, 70px);
+    line-height: 1.06;
+
+    margin: 10px 0 25px;
+
+    max-width: 680px;
+}
+
+.hero-content h1 em {
+    font-family: Caveat, cursive;
+
+    color: #42652c;
+
+    font-size: 1.08em;
+    font-weight: 600;
+}
+
+.hero-content p {
+    max-width: 510px;
+
+    font-size: 17px;
+    color: #5b584f;
+
+    margin-bottom: 30px;
+}
+
+.eyebrow,
+.section-kicker {
+    letter-spacing: 2.2px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #42652c;
+}
+
+
+/* Falowana dolna krawędź Hero */
+
+.wave {
+    position: absolute;
+
+    bottom: -1px;
+    left: -3%;
+
+    width: 106%;
+    height: 95px;
+
+    background: #fffaf1;
+
+    border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+}
+
+
+/*OGÓLNE SEKCJE*/
+
+.section {
+    padding: 95px 0;
+}
+
+.soft {
+    background: #f4efe2;
+}
+
+.section h2,
+.about-copy h2,
+.center-head h2,
+.join h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+    line-height: 1.15;
+
+    margin: 8px 0 15px;
+}
+
+.floral {
+    font-family: Caveat, cursive;
+
+    color: #d27a54;
+
+    font-size: 0.75em;
+}
+
+.section-kicker {
+    display: block;
+}
+
+
+/* SEKCJA „O NAS”*/
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 75px;
+
+    align-items: center;
+}
+
+.photo-card {
+    border-radius: 26px;
+    overflow: hidden;
+
+    box-shadow: 0 20px 45px rgba(62, 49, 31, 0.12);
+
+    transform: rotate(-1deg);
+}
+
+.photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+}
+
+.lead {
+    font-size: 17px;
+    color: #656157;
+}
+
+
+/* WARTOŚCI KGW */
+
+.values {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
+    margin: 35px 0;
+}
+
+.values div {
+    display: flex;
+    flex-direction: column;
+}
+
+.values span {
+    font-size: 27px;
+    color: #d27a54;
+}
+
+.values strong {
+    font-size: 15px;
+
+    margin: 6px 0;
+}
+
+.values small {
+    font-size: 12px;
+    color: #777;
+}
+
+.text-link,
+.card a,
+.news-card a {
+    color: #42652c;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+/* NAGŁÓWKI SEKCJI*/
+
+.section-head {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 35px;
+}
+
+.center-head {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+/* KARTY PRZEPISÓW*/
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(56, 44, 24, 0.08);
+}
+
+.card img,
+.food-fallback {
+    width: 100%;
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.card-body {
+    padding: 18px 20px 21px;
+}
+
+.card h3,
+.news-card h3 {
+    font-family: "Playfair Display", serif;
+
+    margin: 0 0 2px;
+
+    font-size: 20px;
+}
+
+.card p,
+.news-card p {
+    margin: 0 0 12px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+.card a,
+.news-card a {
+    font-size: 12px;
+}
+
+
+/* 10. ZASTĘPCZE TŁA DLA ZDJĘĆ JEDZENIA*/
+
+.food-fallback {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #dfb37b,
+        #f4dfad 45%,
+        #b97742
+    );
+}
+
+.food-fallback::after {
+    content: "✿";
+
+    position: absolute;
+
+    font-size: 90px;
+
+    color: rgba(255, 255, 255, 0.35);
+
+    inset: 50% auto auto 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.pierogi {
+    background: linear-gradient(
+        135deg,
+        #eee3cb,
+        #d4c3a1
+    );
+}
+
+.cake {
+    background: linear-gradient(
+        135deg,
+        #c69b63,
+        #f0d4a5 50%,
+        #8e5d3b
+    );
+}
+
+
+/* AKTUALNOŚCI*/
+
+.news-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.news-card {
+    position: relative;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(56, 44, 24, 0.08);
+}
+
+.news-card > img,
+.pattern-photo {
+    height: 180px;
+    width: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.news-card > div:last-child {
+    padding: 18px 20px 22px;
+}
+
+
+/*DATY AKTUALNOŚCI*/
+
+.news-date {
+    position: absolute !important;
+
+    z-index: 3;
+
+    top: 12px;
+    left: 12px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 8px 10px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news-date b {
+    display: block;
+
+    font-size: 21px;
+
+    line-height: 1;
+}
+
+.news-date span {
+    font-size: 9px;
+
+    color: #42652c;
+
+    font-weight: 800;
+}
+
+
+/* ZASTĘPCZE ZDJĘCIA AKTUALNOŚCI*/
+
+.pattern-photo {
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            #e3a96c 0 10%,
+            transparent 11%
+        ),
+        radial-gradient(
+            circle at 70% 60%,
+            #d27a54 0 12%,
+            transparent 13%
+        ),
+        linear-gradient(
+            135deg,
+            #efe2c7,
+            #c3a46c
+        );
+}
+
+.pattern-photo.green {
+    background: linear-gradient(
+        135deg,
+        #67804b,
+        #c7c79a 50%,
+        #7f9a5d
+    );
+}
+
+
+/* GALERIA*/
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 14px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    display: block;
+
+    transition: transform 0.25s;
+}
+
+.gallery img:hover {
+    transform: translateY(-5px) rotate(1deg);
+}
+
+.gallery-btn {
+    text-align: center;
+
+    margin-top: 28px;
+}
+
+
+/* SEKCJA „DOŁĄCZ DO NAS” */
+
+.join {
+    padding: 85px 0;
+
+    background: #e9dfc9;
+}
+
+.join-grid {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.6fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.join h2 {
+    font-size: 39px;
+}
+
+.join p {
+    max-width: 430px;
+
+    color: #625e54;
+}
+
+
+/*  OKRĄGŁY ELEMENT na dole */
+
+.join-badge {
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    border: 2px solid #42652c;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 19px;
+
+    line-height: 1.05;
+
+    margin: auto;
+
+    box-shadow:
+        inset 0 0 0 8px #e9dfc9,
+        inset 0 0 0 10px #42652c;
+}
+
+.join-badge span {
+    font-family: Caveat, cursive;
+
+    color: #42652c;
+
+    font-size: 29px;
+}
+
+.join-badge div {
+    color: #d27a54;
+
+    margin-top: 8px;
+}
+
+
+/*KONTAKT*/
+
+.contact-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 20px 0;
+}
+
+.contact-list li {
+    margin: 11px 0;
+
+    color: #555;
+}
+
+
+/*STOPKA */
+
+.footer {
+    background: #2f5423;
+
+    color: #eef2df;
+
+    padding: 55px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 60px;
+}
+
+.footer img {
+    width: 230px;
+
+    background: #fffaf1;
+
+    border-radius: 12px;
+}
+
+.footer p {
+    color: #cdd7bf;
+
+    max-width: 300px;
+}
+
+.footer h4 {
+    margin-top: 0;
+}
+
+.footer a {
+    display: block;
+
+    color: #dfe8d3;
+
+    text-decoration: none;
+
+    margin: 7px 0;
+
+    font-size: 14px;
+}
+
+
+/* SOCIAL MEDIA */
+
+.socials {
+    display: flex;
+
+    gap: 10px;
+}
+
+.socials a {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid #dfe8d3;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/*  DOLNA CZĘŚĆ STOPKI */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    margin-top: 35px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #bfcbb0;
+
+    font-size: 12px;
+}
+
+
+/*  TABLET */
+
+@media (max-width: 900px) {
+
+    .nav {
+        gap: 14px;
+    }
+
+    .nav a {
+        font-size: 12px;
+    }
+
+    .nav-cta {
+        padding: 9px 12px;
+    }
+
+    .about-grid,
+    .join-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .join-badge {
+        order: 2;
+    }
+
+    .join-grid > div:last-child {
+        order: 3;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery img {
+        height: 180px;
+    }
+}
+
+
+
+   /* Wersja na  TELEFON*/
+
+
+@media (max-width: 720px) {
+
+    .site-header {
+        position: relative;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav {
+        display: none;
+
+        position: absolute;
+
+        left: 4%;
+        right: 4%;
+        top: 74px;
+
+        background: #fffaf1;
+
+        padding: 15px;
+
+        border-radius: 15px;
+
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 9px;
+    }
+
+    .brand img {
+        width: 195px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        padding: 70px 0 125px;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(255, 250, 241, 0.96) 0%,
+            rgba(255, 250, 241, 0.82) 52%,
+            rgba(255, 250, 241, 0.3) 100%
+        );
+    }
+
+    .hero-image {
+        background-position: 65% center;
+    }
+
+
+    /* ---------- SEKCJE ---------- */
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 320px;
+    }
+
+
+    /* ---------- NAGŁÓWKI ---------- */
+
+    .about-copy h2,
+    .section h2,
+    .center-head h2,
+    .join h2 {
+        font-size: 34px;
+    }
+
+
+    /* ---------- WARTOŚCI ---------- */
+
+    .values {
+        gap: 12px;
+    }
+
+    .values small {
+        font-size: 11px;
+    }
+
+
+    /* ---------- NAGŁÓWEK SEKCJI ---------- */
+
+    .section-head {
+        display: block;
+    }
+
+    .section-head .btn {
+        margin-top: 20px;
+    }
+
+
+    /* ---------- KARTY ---------- */
+
+    .cards,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ---------- GALERIA ---------- */
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery img {
+        height: 180px;
+    }
+
+
+    /* ---------- STOPKA ---------- */
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        display: block;
+    }
+
+    .footer-bottom span {
+        display: block;
+
+        margin: 5px 0;
+    }
+}
